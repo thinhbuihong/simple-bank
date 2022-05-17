@@ -39,7 +39,7 @@ jobs:
           which migrate
 
       - name: run migrations
-        run: ./migrate.sh up
+        run: ./script.sh migrate:up
 
       - name: Test
         run: go test -v -cover ./...

@@ -11,7 +11,7 @@ case $1 in
 		migrate create -ext sql -dir db/migrations -seq $2
 		;;
 	"mockdb")
-		mockgen -package mockdb -destination db/mock/store.go --build_flags=--mod=mod github.com/thinhbuihong/simplebank/db/sqlc Store
+		mockgen -package mockdb -destination db/mockdb/store.go --build_flags=--mod=mod github.com/thinhbuihong/simplebank/db/sqlc Store
 		;;
 	"test")
 		go test -v -cover ./...
