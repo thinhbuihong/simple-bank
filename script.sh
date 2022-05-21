@@ -13,6 +13,9 @@ case $1 in
 	"mockdb")
 		mockgen -package mockdb -destination db/mockdb/store.go --build_flags=--mod=mod github.com/thinhbuihong/simplebank/db/sqlc Store
 		;;
+	"sqlc")
+		sqlc generate
+		;;
 	"test")
 		go test -v -cover ./...
 		;;
