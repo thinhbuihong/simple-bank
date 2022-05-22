@@ -20,7 +20,8 @@ func (maker *JWTMaker) CreateToken(username string, duration time.Duration) (str
 		return "", err
 	}
 
-	jwtToken := jwt.NewWithClaims(jwt.SigningMethodES256, payload)
+	jwtToken := jwt.NewWithClaims(jwt.SigningMethodHS256, payload)
+	// token,err:= jwtToken.SignedString([]byte(maker.secretKey))
 	return jwtToken.SignedString([]byte(maker.secretKey))
 }
 func (maker *JWTMaker) VerifyToken(token string) (*Payload, error) {
