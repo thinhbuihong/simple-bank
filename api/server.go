@@ -14,7 +14,7 @@ import (
 type Server struct {
 	config     util.Config
 	store      db.Store
-	totenMaker token.Maker
+	tokenMaker token.Maker
 	router     *gin.Engine
 }
 
@@ -25,7 +25,7 @@ func NewServer(config util.Config, store db.Store) (*Server, error) {
 	}
 	server := &Server{
 		store:      store,
-		totenMaker: tokenMaker,
+		tokenMaker: tokenMaker,
 		config:     config,
 	}
 
